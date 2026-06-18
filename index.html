@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRAFTING CALCULATOR | GTA V RAGE:MP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-grid"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    
+    <div class="corner-text neon-blue">Don Salieri</div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 12 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <h1 class="title">CRAFTING CALCULATOR</h1>
+            </div>
+        </header>
+
+        <main class="calculator-card">
+            <!-- TABS -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="weapons">
+                    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.5 17.5 3 6V3h3l11.5 11.5"></path>
+                        <path d="m13 19 6-6"></path>
+                        <path d="m16 16 4 4"></path>
+                        <path d="m19 21 2-2"></path>
+                    </svg>
+                    ARME
+                </button>
+                <button class="tab-btn" data-tab="melee">
+                    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9h12"></path>
+                        <path d="M6 12h12"></path>
+                        <path d="M6 15h12"></path>
+                    </svg>
+                    ARME ALBE
+                </button>
+                <button class="tab-btn" data-tab="drugs">
+                    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2v7.31"></path>
+                        <path d="M14 9.3V1.99"></path>
+                        <path d="M8.5 2h7"></path>
+                        <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
+                        <path d="M5.52 16h12.96"></path>
+                    </svg>
+                    DROGURI
+                </button>
+            </div>
+
+            <!-- TAB CONTENT: WEAPONS -->
+            <div id="tab-weapons" class="tab-content active">
+                <div class="form-group">
+                    <label class="form-label">
+                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        Selectează Arma
+                    </label>
+                    <div class="search-wrapper">
+                        <input type="text" id="weapon-search" class="form-input search-input" 
+                               placeholder="Caută o armă... (ex: Pistol, AK47, Sawnoff)" autocomplete="off">
+                        <div id="weapon-dropdown" class="search-dropdown hidden">
+                            <div id="weapon-list" class="dropdown-items"></div>
+                        </div>
+                    </div>
+                    <div id="selected-weapon" class="selected-item hidden">
+                        <span class="selected-label">Armă selectată:</span>
+                        <span id="selected-weapon-name" class="selected-name"></span>
+                    </div>
+                </div>
+
+                <!-- Attachments Section for Weapons -->
+                <div id="attachments-section" class="attachments-section hidden">
+                    <div class="attachments-header">
+                        <label class="form-label">
+                            <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v4"></path>
+                                <path d="m16.2 7.8 2.9-2.9"></path>
+                                <path d="M18 12h4"></path>
+                                <path d="m16.2 16.2 2.9 2.9"></path>
+                                <path d="M12 18v4"></path>
+                                <path d="m4.9 19.1 2.9-2.9"></path>
+                                <path d="M2 12h4"></path>
+                                <path d="m4.9 4.9 2.9 2.9"></path>
+                            </svg>
+                            Atașamente Disponibile
+                        </label>
+                        <span class="attachments-hint">Bifează atașamentele dorite</span>
+                    </div>
+                    <div id="attachments-list" class="attachments-checkboxes">
+                        <!-- Generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT: MELEE -->
+            <div id="tab-melee" class="tab-content">
+                <div class="form-group">
+                    <label class="form-label">
+                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        Selectează Arma Albă
+                    </label>
+                    <div class="search-wrapper">
+                        <input type="text" id="melee-search" class="form-input search-input" 
+                               placeholder="Caută o armă albă... (ex: Knife, Bat, Dagger)" autocomplete="off">
+                        <div id="melee-dropdown" class="search-dropdown hidden">
+                            <div id="melee-list" class="dropdown-items"></div>
+                        </div>
+                    </div>
+                    <div id="selected-melee" class="selected-item hidden">
+                        <span class="selected-label">Armă selectată:</span>
+                        <span id="selected-melee-name" class="selected-name"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT: DRUGS -->
+            <div id="tab-drugs" class="tab-content">
+                <div class="form-group">
+                    <label class="form-label">
+                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        Selectează Drogul
+                    </label>
+                    <div class="search-wrapper">
+                        <input type="text" id="drug-search" class="form-input search-input" 
+                               placeholder="Caută un drog... (ex: Joint, Meth, Cocaina)" autocomplete="off">
+                        <div id="drug-dropdown" class="search-dropdown hidden">
+                            <div id="drug-list" class="dropdown-items"></div>
+                        </div>
+                    </div>
+                    <div id="selected-drug" class="selected-item hidden">
+                        <span class="selected-label">Drog selectat:</span>
+                        <span id="selected-drug-name" class="selected-name"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMMON: Quantity -->
+            <div class="form-group">
+                <label for="quantity" class="form-label">
+                    <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 3v3a2 2 0 0 1-2 2H3"></path>
+                        <path d="M16 3v3a2 2 0 0 0 2 2h3"></path>
+                        <path d="M8 21v-3a2 2 0 0 0-2-2H3"></path>
+                        <path d="M16 21v-3a2 2 0 0 1 2-2h3"></path>
+                    </svg>
+                    Cantitate
+                </label>
+                <div class="quantity-wrapper">
+                    <button type="button" id="decrease-qty" class="qty-btn">−</button>
+                    <input type="number" id="quantity" class="form-input quantity-input" 
+                           value="1" min="1" max="999">
+                    <button type="button" id="increase-qty" class="qty-btn">+</button>
+                </div>
+            </div>
+
+            <!-- PREVIEW SECTION -->
+            <div id="preview-section" class="preview-section hidden">
+                <h3 class="preview-title">Costuri pentru această selecție</h3>
+                <div class="preview-content">
+                    <div class="preview-item-name" id="preview-item-name"></div>
+                    <div class="preview-materials" id="preview-materials"></div>
+                    <div class="preview-money" id="preview-money"></div>
+                </div>
+            </div>
+
+            <button id="add-to-cart-btn" class="calculate-btn secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14"></path>
+                    <path d="M5 12h14"></path>
+                </svg>
+                ADAUGĂ ÎN LISTĂ
+            </button>
+
+            <!-- CART SECTION -->
+            <div id="cart-section" class="cart-section hidden">
+                <div class="cart-header">
+                    <h3 class="cart-title">Lista de Craftare</h3>
+                    <span id="cart-count" class="cart-count">0 iteme</span>
+                </div>
+                <div id="cart-items" class="cart-items">
+                    <!-- Cart items generated by JS -->
+                </div>
+                <button id="calculate-all-btn" class="calculate-btn">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 7 6 21"></path>
+                        <path d="M15 7 18 21"></path>
+                        <path d="M12 2v5"></path>
+                        <path d="M12 10v2"></path>
+                    </svg>
+                    CALCULEAZĂ TOT
+                </button>
+                <button id="clear-cart-btn" class="calculate-btn danger">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                    </svg>
+                    ȘTERGE TOT
+                </button>
+            </div>
+
+            <!-- RESULTS -->
+            <div id="result-section" class="result-section hidden">
+                <div class="result-header">
+                    <h2 class="result-title">Materiale Necesare</h2>
+                    <div class="result-meta">
+                        <span id="result-item" class="result-item-name"></span>
+                        <span class="result-separator">×</span>
+                        <span id="result-qty" class="result-qty"></span>
+                    </div>
+                </div>
+
+                <div class="calculation-breakdown" id="calculation-breakdown">
+                    <!-- Weapon + attachments breakdown -->
+                </div>
+
+                <div class="materials-list" id="materials-list">
+                    <!-- Generated by JavaScript -->
+                </div>
+
+                <div class="totals-section">
+                    <div id="money-cost" class="cost-row hidden">
+                        <span class="cost-label">Cost Bani Murdari</span>
+                        <span id="money-value" class="cost-value money"></span>
+                    </div>
+                    <div class="total-row">
+                        <span class="total-label">TOTAL MATERIALE</span>
+                        <span id="total-materials" class="total-value"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="error-message" class="error-message hidden">
+                <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <span id="error-text"></span>
+            </div>
+        </main>
+
+        <footer class="footer">
+        </footer>
+    </div>
+
+    <script src="recipes.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
