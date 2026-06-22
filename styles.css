@@ -12,9 +12,9 @@
     --bg-input: #1e1e2a;
     --bg-hover: #252532;
     
-    --accent-primary: #dc2626;
-    --accent-secondary: #b91c1c;
-    --accent-glow: rgba(220, 38, 38, 0.4);
+    --accent-primary: #71717a;
+    --accent-secondary: #52525b;
+    --accent-glow: rgba(113, 113, 122, 0.4);
     --accent-success: #10b981;
     --accent-warning: #f59e0b;
     --accent-danger: #ef4444;
@@ -24,7 +24,7 @@
     --text-muted: #71717a;
     
     --border-color: #27273a;
-    --border-focus: #dc2626;
+    --border-focus: #71717a;
     
     --font-display: 'Rajdhani', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -32,7 +32,7 @@
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
-    --shadow-glow: 0 0 40px rgba(220, 38, 38, 0.15);
+    --shadow-glow: 0 0 40px rgba(113, 113, 122, 0.15);
     
     --radius-sm: 6px;
     --radius-md: 10px;
@@ -63,8 +63,8 @@ body {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(rgba(220, 38, 38, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(220, 38, 38, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(113, 113, 122, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(113, 113, 122, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
     z-index: 0;
@@ -146,30 +146,20 @@ body {
     text-transform: uppercase;
 }
 
-/* Logo Row */
-.logos-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 20px;
-    padding: 10px 0;
-}
-
-.header-logo {
-    height: 60px;
-    width: auto;
+/* Main Logo */
+.main-logo {
+    display: block;
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 20px auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.3));
+    filter: drop-shadow(0 0 15px rgba(113, 113, 122, 0.3));
     transition: transform 0.3s ease;
 }
 
-.header-logo:hover {
-    transform: scale(1.05);
-}
-
-.ndrangheta-logo {
-    height: 80px;
+.main-logo:hover {
+    transform: scale(1.03);
 }
 
 .corner-text {
@@ -186,8 +176,8 @@ body {
 }
 
 .corner-text.neon-blue {
-    color: #dc2626;
-    text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+    color: #a1a1aa;
+    text-shadow: 0 0 10px rgba(161, 161, 170, 0.3);
 }
 
 /* Preview Section */
@@ -306,7 +296,7 @@ body {
     background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
     border-color: var(--accent-primary);
     color: var(--text-primary);
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+    box-shadow: 0 4px 15px rgba(113, 113, 122, 0.3);
 }
 
 .tab-icon {
