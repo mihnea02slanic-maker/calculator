@@ -1,0 +1,16 @@
+# Screenshots and images not needed for web
+*.jpg
+!/*.jpg
+*.png
+!/*.png
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
